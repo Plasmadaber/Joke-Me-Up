@@ -5,6 +5,23 @@
         mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
         x:Class="Joke_Me_Up.MainWindow"
         Title="Joke_Me_Up">
-    Welcome to Avalonia!
+
+    <Grid Background="#000042" 
+      HorizontalAlignment="Stretch" 
+      VerticalAlignment="Stretch"
+      ColumnDefinitions="*,2*,*"
+      RowDefinitions="0.25*,*, *">
+        <TextBlock Background = "SkyBlue" Foreground="White" Text="JOKE ME UP" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3"
+          TextWrapping="Wrap" TextAlignment="Center" FontWeight="Bold" FontSize="50"/>
+
+        <TextBlock Name="JokeText" Background="#000042" Foreground="SkyBlue" Text="Do You Wanna Hear a Joke?" FontSize="30" TextAlignment="Center" TextWrapping="Wrap"
+         Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="3" VerticalAlignment="Center" Margin="5" />
+
+        <Button Name="GetJokeButton" Click="GetJoke" Background = "SkyBlue" Foreground="White" Content="Get a Joke" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontWeight="Bold"
+         Grid.Row="2" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Top" Width="260" Height="40" FontSize="20" />
+
+        <Button Name="Quit" Click="QuitApp" Background = "SkyBlue" Foreground="White" Content="Quit" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontWeight="Bold"
+         Grid.Row="2" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" Width="260" Height="40" FontSize="20" />
+    </Grid>
 </Window>
 

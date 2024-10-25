@@ -22,8 +22,8 @@ namespace Joke_Me_Up
 			while (line != null && line.Length != 0)
 			{
 				line = reader.ReadLine();
-				line = line.Substring(line.IndexOf(","));
-				_jokes.Add(line);
+				if (line != null) { line = line.Substring(line.IndexOf(",")+1).Replace("\"", ""); }
+                _jokes.Add(line);
 			}
 		}
 
