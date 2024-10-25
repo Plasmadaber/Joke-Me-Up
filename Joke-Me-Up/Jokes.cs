@@ -15,7 +15,7 @@ namespace Joke_Me_Up
 		// Initalizes the _jokes list with all jokes from shortjokes.csv
 		public static void init()
 		{
-			StreamReader reader = new StreamReader("shortjokes.csv");
+			StreamReader reader = new StreamReader("dad_jokes.csv");
 
 			string line = reader.ReadLine();
 

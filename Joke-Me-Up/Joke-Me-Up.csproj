@@ -17,7 +17,7 @@
     <PackageReference Include="Avalonia" Version="11.1.4" />
   </ItemGroup>
   <ItemGroup>
-    <None Update="shortjokes.csv">
+    <None Update="dad_jokes.csv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
   </ItemGroup>
