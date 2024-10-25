@@ -1,10 +1,37 @@
 ﻿using System;
-namespace JokeMeUp
+using System.IO;
+using System.Collections.Generic;
+
+/*
+ * This Class is soley used to implement the ability to get a random joke
+ */
+
+namespace Joke_Me_Up
 {
-	public class Jokes
+	public static class Jokes
 	{
-		public Jokes()
+		private static List<string> _jokes = new List<string>();
+
+		// Initalizes the _jokes list with all jokes from shortjokes.csv
+		public static void init()
 		{
+			StreamReader reader = new StreamReader("shortjokes.csv");
+
+			string line = reader.ReadLine();
+
+			while (line != null && line.Length != 0)
+			{
+				line = reader.ReadLine();
+				line = line.Substring(line.IndexOf(","));
+				_jokes.Add(line);
+			}
+		}
+
+		// returns a random joke from _jokes
+		public static string GetJoke()
+		{
+			Random rand = new Random();
+			return _jokes[rand.Next(0, _jokes.Count)];
 		}
 	}
 }
