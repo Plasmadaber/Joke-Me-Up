@@ -23,6 +23,8 @@ namespace Joke_Me_Up
 			{
 				line = reader.ReadLine();
 				if (line != null) { line = line.Substring(line.IndexOf(",")+1).Replace("\"", ""); }
+				int indexQuesMark = line.IndexOf("?");
+				if (indexQuesMark != -1) { line = line.Substring(0, indexQuesMark + 1) + "\n\n" + line.Substring(indexQuesMark + 1); }
                 _jokes.Add(line);
 			}
 		}
