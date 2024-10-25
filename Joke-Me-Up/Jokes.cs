@@ -12,7 +12,7 @@ namespace Joke_Me_Up
 	{
 		private static List<string> _jokes = new List<string>();
 
-		// Initalizes the _jokes list with all jokes from shortjokes.csv
+		// Initalizes the _jokes list with all jokes from dad_jokes.csv
 		public static void init()
 		{
 			StreamReader reader = new StreamReader("dad_jokes.csv");
