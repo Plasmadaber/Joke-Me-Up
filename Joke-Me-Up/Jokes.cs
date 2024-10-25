@@ -1,6 +1,7 @@
 ﻿using System;
 using System.IO;
 using System.Collections.Generic;
+using System.Runtime.InteropServices;
 
 /*
  * This Class is soley used to implement the ability to get a random joke
@@ -15,7 +16,7 @@ namespace Joke_Me_Up
 		// Initalizes the _jokes list with all jokes from dad_jokes.csv
 		public static void init()
 		{
-			StreamReader reader = new StreamReader("dad_jokes.csv");
+			StreamReader reader = new StreamReader(System.Reflection.Assembly.GetEntryAssembly().Location.Replace("/Joke-Me-Up.dll", "") + "/dad_jokes.csv");
 
 			string line = reader.ReadLine();
 
@@ -27,6 +28,8 @@ namespace Joke_Me_Up
 				if (indexQuesMark != -1) { line = line.Substring(0, indexQuesMark + 1) + "\n\n" + line.Substring(indexQuesMark + 1); }
                 _jokes.Add(line);
 			}
+
+			reader.Close();
 		}
 
 		// returns a random joke from _jokes

@@ -8,6 +8,9 @@
     <AvaloniaUseCompiledBindingsByDefault>true</AvaloniaUseCompiledBindingsByDefault>
   </PropertyGroup>
 
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="Avalonia.Desktop" Version="11.1.4" />
     <PackageReference Include="Avalonia.Themes.Fluent" Version="11.1.4" />
@@ -17,8 +20,16 @@
     <PackageReference Include="Avalonia" Version="11.1.4" />
   </ItemGroup>
   <ItemGroup>
+    <None Remove="dad_jokes.csv" />
+  </ItemGroup>
+  <ItemGroup>
     <None Update="dad_jokes.csv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="dad_jokes.csv">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
 </Project>
