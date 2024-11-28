@@ -7,7 +7,7 @@ using System.Runtime.InteropServices;
  * This Class is soley used to implement the ability to get a random joke
  */
 
-namespace Joke_Me_Up
+namespace JokeMe_Up
 {
 	public static class Jokes
 	{
